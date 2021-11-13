@@ -1,0 +1,396 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+//COLOR
+$homeButtonColor: #2B2B2B;
+$homeButtonColor2: #FAFF00;
+$socialIcons: #FAFF00;
+
+//MIXINS
+
+@mixin PageTitle1{ //for all page infos text
+    font-size: 45px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+}
+
+@mixin PageTitle2{ //for all page infos text
+    font-size: 30px;
+    color: $homeButtonColor2;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.7px;
+}
+
+@mixin laptopSpecs{ //for setup page details
+    ul{
+        a{
+            display: flex;
+            text-decoration: none;
+            cursor: pointer;
+            svg{
+                color: #ffffff!important;
+                font-size: 30px;
+                margin: 0 5px;
+                transition: 0.3s ease;
+                -webkit-transition: 0.3s ease;
+                -moz-transition: 0.3s ease;
+            }
+            h2{
+                font-family: 'Montserrat', sans-serif;
+                color: #ffffff;
+                font-weight: 600;
+            }
+            &:hover svg{
+                transform: rotate(25deg);
+            }
+        }
+        li{
+            color: $socialIcons;
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px 30px 10px;
+            font-size: 20px;
+            width: 100%;
+        }
+    }
+}
+
+@mixin keyboardSpecs{ //for setup page details
+    ul{
+        h2{
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-weight: 600;
+            width: 100%;
+        }
+        li{
+            color: $socialIcons;
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px 30px 10px;
+            font-size: 20px;
+            width: 100%;
+        }
+    }
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #000000!important;
+    overflow-x: hidden;
+}
+
+//scrollbar
+
+::-webkit-scrollbar{
+    width: 3px!important;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $socialIcons;
+    border-radius: 50px!important;
+}
+::-webkit-scrollbar-track{
+    background-color: #000000;
+}
+
+//nav
+nav{
+    padding: 15px 80px!important;
+    .navbar-brand{
+        font-size: 25px;
+        color: #ffffff!important;
+        font-family: 'Montserrat', sans-serif;
+        b{ //logo bold text
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+    }
+    .navbar-nav{
+        margin-left: auto;
+        .nav-item{
+            margin: 20px;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            a{
+                color: #949494!important;
+                text-decoration: none;
+                transition: 0.2s ease;
+                -webkit-transition: 0.2s ease;
+                &:hover{
+                    color: #ffffff!important;
+                    text-decoration: none;
+                }
+            }
+            .active{
+                color: #ff0000!important;
+                &:hover{
+                    color: #ff0000!important;
+                }
+            }
+        }
+    }
+}
+//nav fixed
+nav.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: #000000cf;
+    box-shadow: 0 5px 15px #0c0c0cde;
+}
+//about
+.aboutinfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 60px;
+    .side1{
+        width: 55%;
+        margin: 20px 0;
+        .title{
+            font-size: 70px;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .description{
+            width: 75%;
+            color: #AAAAAA;
+            margin: 15px 3px 60px;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .buttons{
+            .linkBtn{
+                background-color: $homeButtonColor;
+                padding: 17px 40px;
+                color: #ffffff;
+                font-size: 20px;
+                text-decoration: none;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                &:nth-child(2){
+                    margin-left: 10px;
+                    background-color: $homeButtonColor2;
+                    color: #000000;
+                }
+            }
+        }
+        .socialNet{
+            margin-top: 45px;
+            .links{
+                padding: 0 30px 0 0;
+                .iconSvg{
+                    font-size: 35px;
+                    color: #ffffff;
+                    &:hover{
+                        color: $socialIcons;
+                    }
+                }
+            }
+        }
+    }
+    .side2{
+        .myImage{
+            width: 95%;
+        }
+    }
+}
+//portfolio
+.titles{ //page info
+    text-align: center;
+    margin-top: 75px;
+    .title1{
+        @include PageTitle1();
+    }
+    .title2{
+        @include PageTitle2();
+    }
+}
+.row{
+    .col-md-12{
+        padding-top: 50px;
+        .projectCard{
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            .projectImage{
+                width: 50%;
+            }
+            .projectTitles{
+                margin: 30px 50px;
+                .projectAbout{
+                    .projectName{
+                        color: #ffffff;
+                        font-weight: 600;
+                        font-family: 'Montserrat', sans-serif;
+                    }
+                    .projectDesc{
+                        color: #AAAAAA;
+                        margin: 10px 0 50px;
+                        font-family: 'Montserrat', sans-serif;
+                    }
+                }
+                .projectButtons{
+                    .buttons{
+                        background-color: #2B2B2B;
+                        padding: 17px 35px;
+                        color: #ffffff;
+                        font-size: 20px;
+                        text-decoration: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 500;
+                        svg{
+                            margin: 0 10px 0;
+                        }
+                        &:nth-child(2){
+                            background-color: $homeButtonColor2;
+                            color: #000000;
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2){
+            .projectCard{
+                flex-direction: row-reverse;
+                .projectTitles{
+                    margin: 30px 0;
+                    .projectAbout{
+                        .projectDesc{
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(4){
+            .projectCard{
+                flex-direction: row-reverse;
+                .projectTitles{
+                    margin: 30px 0;
+                    .projectAbout{
+                        .projectDesc{
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(6){
+            .projectCard{
+                flex-direction: row-reverse;
+                .projectTitles{
+                    margin: 30px 0;
+                    .projectAbout{
+                        .projectDesc{
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(8){
+            .projectCard{
+                flex-direction: row-reverse;
+                .projectTitles{
+                    margin: 30px 0;
+                    .projectAbout{
+                        .projectDesc{
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//setup
+.setupMain{
+    .setupImage{
+        display: flex;
+        justify-content: center;
+        img{
+            margin-top: 100px;
+            width: 50%;
+            border-radius: 10px;
+        }
+    }
+    .container{
+        .row{
+            justify-content: center;
+            .col-md-8{
+                .mySetup{
+                    padding: 50px 75px;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    .laptopSpecs{
+                        margin-bottom: 40px;
+                        @include laptopSpecs();
+                    }
+                    .keyboardSpecs{
+                        width: 150%;
+                        @include keyboardSpecs();
+                    }
+                }
+            }
+        }
+    }
+}
+//about-me
+.aboutmeMain{
+    display: flex;
+    padding: 85px;
+    span{
+        .aboutmeText{
+            padding: 0 0 30px 45px;
+            font-size: 26px;
+            width: 95%;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            div{
+                padding: 30px 0 30px;
+            }
+        }
+    }
+}
+//faqs
+.faqs{
+    .faqsMenu{
+        text-align: center;
+        margin: 50px 0;
+        h3{
+            color: #FAFF00;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        p{
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+}
+//footer
+.footer{
+    padding: 20px 0 0;
+    border-top: 1px solid #aaaaaa;
+    text-align: center;
+    p{
+        font-size: 17px;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        svg{
+            color: rgb(255, 0, 0);
+        }
+    }
+}
